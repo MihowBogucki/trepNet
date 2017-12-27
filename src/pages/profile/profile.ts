@@ -73,7 +73,7 @@ export class ProfilePage {
   }
 
   updateProfession(profession: string): void {
-    this.profileProvider.updateDOB(profession);
+    this.profileProvider.updateProfession(profession);
   }
 
   updateEmail(): void {
