@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyBmFN9zVWzfvISuDT-Hw-1bUOYVynSc_Mc",
-    authDomain: "eventmanager-1521e.firebaseapp.com",
-    databaseURL: "https://eventmanager-1521e.firebaseio.com",
-    projectId: "eventmanager-1521e",
-    storageBucket: "",
-    messagingSenderId: "554477154997"
+  apiKey: "AIzaSyAluQTk2lEFWflCHx13tjMWndMO4hfHRC8",
+  authDomain: "trepnet-58387.firebaseapp.com",
+  databaseURL: "https://trepnet-58387.firebaseio.com",
+  projectId: "trepnet-58387",
+  storageBucket: "",
+  messagingSenderId: "463618823903"
   };
