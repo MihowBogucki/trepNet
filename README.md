@@ -10,6 +10,14 @@ first Firebase powered Ionic app** which covers:
 
 Clone this repository using ssh:
 
+After project has been cloned:
+
+```sh
+$ npm install
+```
+
+Then 
+
 ```sh
 $ ionic serve
 ```
