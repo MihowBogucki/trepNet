@@ -1,8 +1,8 @@
 {
-  "name": "EventManager",
-  "app_id": "40384133",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
+    "name": "TrepNet",
+    "app_id": "40384133",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    }
 }
