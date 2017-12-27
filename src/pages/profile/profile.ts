@@ -17,6 +17,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class ProfilePage {
   public userProfile: any;
   public birthDate: string;
+  public profession: string;
 
   constructor(
     public navCtrl: NavController,
@@ -29,6 +30,7 @@ export class ProfilePage {
     this.profileProvider.getUserProfile().on('value', userProfileSnapshot => {
       this.userProfile = userProfileSnapshot.val();
       this.birthDate = userProfileSnapshot.val().birthDate;
+      this.profession = userProfileSnapshot.val().profession;
     });
   }
 
@@ -68,6 +70,10 @@ export class ProfilePage {
 
   updateDOB(birthDate: string): void {
     this.profileProvider.updateDOB(birthDate);
+  }
+
+  updateProfession(profession: string): void {
+    this.profileProvider.updateDOB(profession);
   }
 
   updateEmail(): void {

@@ -29,6 +29,10 @@ export class ProfileProvider {
         return this.userProfile.update({ birthDate });
         }
 
+        updateProfession(profession:string): Promise<any> {
+        return this.userProfile.update({ profession });
+        }
+
         updateEmail(newEmail: string, password: string): Promise<any> {
           const credential: firebase.auth.AuthCredential = firebase.auth.
           EmailAuthProvider.credential(
