@@ -1,7 +1,6 @@
 # TrepNet Application
 
-The Event Manager app is the showcased app in the free course: **Build your
-first Firebase powered Ionic app** which covers:
+The TrepNet app intergrates with **Firebase** and **Ionic Framework** to build a login app for users to send messages to each other
 
 * User Authentication.
 * Profile Page.
