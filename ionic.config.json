@@ -1,6 +1,6 @@
 {
   "name": "EventManager",
-  "app_id": "",
+  "app_id": "40384133",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
