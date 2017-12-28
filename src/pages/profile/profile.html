@@ -31,10 +31,16 @@
             <ion-label class="dob-label">Date of Birth</ion-label>
             <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
         </ion-item>
-        <ion-item>
-            <ion-label class="dob-label">Profession</ion-label>
-            <ion-input [(ngModel)]="profession" type="text" placeholder="What's your Profession?" (ionChange)="updateProfession(profession)"></ion-input>
-        </ion-item>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6> Profession
+                    <ion-label class="dob-label">Profession 2</ion-label>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-input [(ngModel)]="profession" type="text" placeholder="What's your Profession?" (ionChange)="updateProfession(profession)"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
         <ion-item (click)="updateEmail()">
             <ion-grid>
                 <ion-row>
