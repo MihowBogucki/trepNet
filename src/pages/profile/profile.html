@@ -14,6 +14,11 @@
         <ion-list-header>
             Personal Information
         </ion-list-header>
+        <button ion-button (click)="takeSelfie()">Take a Selfie</button>
+        <button ion-button icon-only (click)="takeSelfie()">
+            Profile Picture
+            <ion-icon name="camera"></ion-icon>
+        </button>
         <ion-item (click)="updateName()">
             <ion-grid>
                 <ion-row>

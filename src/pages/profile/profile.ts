@@ -7,6 +7,8 @@ import {
 } from 'ionic-angular';
 import { ProfileProvider } from '../../providers/profile/profile';
 import { AuthProvider } from '../../providers/auth/auth';
+import firebase from 'firebase';
+import { Camera } from '@ionic-native/camera';
 
 @IonicPage()
 @Component({
@@ -23,7 +25,8 @@ export class ProfilePage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public authProvider: AuthProvider,
-    public profileProvider: ProfileProvider
+    public profileProvider: ProfileProvider,
+    public cameraPlugin: Camera
   ) {}
 
   ionViewDidLoad() {
@@ -37,6 +40,32 @@ export class ProfilePage {
   logOut(): void {
     this.authProvider.logoutUser().then(() => {
       this.navCtrl.setRoot('LoginPage');
+    });
+  }
+
+ 
+  takeSelfie(): void {
+    this.cameraPlugin.getPicture({
+      quality : 95,
+      destinationType : this.cameraPlugin.DestinationType.DATA_URL,
+      sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
+      allowEdit : true,
+      encodingType: this.cameraPlugin.EncodingType.PNG,
+      targetWidth: 500,
+      targetHeight: 500,
+      saveToPhotoAlbum: true
+    }).then(profilePicture => {
+      // Send the picture to Firebase Storage
+      const selfieRef = firebase.storage().ref('profilePictures/user1/profilePicture.png');
+      selfieRef.putString(profilePicture, 'base64', {contentType: 'image/png'}).then(savedProfilePicture => {
+        firebase
+          .database()
+          .ref(`users/user1/profilePicture`)
+          .set(savedProfilePicture.downloadURL);
+      });
+    }, error => {
+      // Log an error to the console if something goes wrong.
+      console.log("ERROR -> " + JSON.stringify(error));
     });
   }
 
