@@ -18,6 +18,7 @@ export class ProfilePage {
   public userProfile: any;
   public birthDate: string;
   public profession: string;
+  public phoneNo: string;
 
   constructor(
     public navCtrl: NavController,
@@ -31,6 +32,7 @@ export class ProfilePage {
       this.userProfile = userProfileSnapshot.val();
       this.birthDate = userProfileSnapshot.val().birthDate;
       this.profession = userProfileSnapshot.val().profession;
+      this.phoneNo = userProfileSnapshot.val().phoneNo;
     });
   }
 
@@ -74,6 +76,10 @@ export class ProfilePage {
 
   updateProfession(profession: string): void {
     this.profileProvider.updateProfession(profession);
+  }
+
+  updatePhoneNo(phoneNo:string): void {
+    this.profileProvider.updatePhoneNo(phoneNo);
   }
 
   updateEmail(): void {

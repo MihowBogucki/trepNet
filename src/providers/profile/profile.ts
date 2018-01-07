@@ -30,8 +30,12 @@ export class ProfileProvider {
         }
 
         updateProfession(profession:string): Promise<any> {
-        return this.userProfile.update({ profession });
-        }
+          return this.userProfile.update({ profession });
+          }
+
+          updatePhoneNo(phoneNo:string): Promise<any> {
+            return this.userProfile.update({ phoneNo });
+            }
 
         updateEmail(newEmail: string, password: string): Promise<any> {
           const credential: firebase.auth.AuthCredential = firebase.auth.
