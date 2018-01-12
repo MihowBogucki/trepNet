@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import firebase from "firebase";
-import{Reference,ThenableReference}from'@firebase/database-types';
 
 @Injectable()
 export class EventProvider {
-  public eventListRef: Reference;
+  public eventListRef: firebase.database.Reference;
   constructor() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -20,7 +19,7 @@ export class EventProvider {
     eventDate: string,
     eventPrice: number,
     eventCost: number
-  ): ThenableReference {
+  ): firebase.database.ThenableReference {
     return this.eventListRef.push({
       name: eventName,
       date: eventDate,
@@ -30,11 +29,11 @@ export class EventProvider {
     });
   }
 
-  getEventList(): Reference {
+  getEventList(): firebase.database.Reference {
     return this.eventListRef;
   }
 
-  getEventDetail(eventId: string): Reference {
+  getEventDetail(eventId: string): firebase.database.Reference {
     return this.eventListRef.child(eventId);
   }
 
